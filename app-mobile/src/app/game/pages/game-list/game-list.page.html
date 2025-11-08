@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Partidos pendientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="games.length > 0; else empty">
+    <ion-item *ngFor="let g of games" (click)="goToReport(g)">
+      <ion-label>
+        <h2>{{ g.home_team.name || 'Equipo ' + g.home_team_id }} vs {{ g.away_team.name || 'Equipo ' + g.away_team_id }}</h2>
+        <p *ngIf="g.status">{{ g.status | uppercase }}</p>
+      </ion-label>
+      <ion-note slot="end">Reportar</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #empty>
+    <div class="ion-padding">
+      <p>No hay partidos pendientes.</p>
+      <ion-button expand="block" (click)="loadGames()">Recargar</ion-button>
+    </div>
+  </ng-template>
+</ion-content>

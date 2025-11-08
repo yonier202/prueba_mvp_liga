@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="mb-4">
+        <h3 class="mb-1">Nuevo Equipo</h3>
+        <p class="text-muted">Ingresa la información del equipo</p>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <form>
+            <div class="mb-4">
+              <label for="teamName" class="form-label fw-semibold">
+                Nombre del equipo <span class="text-danger">*</span>
+              </label>
+              <input
+                id="teamName"
+                type="text"
+                [(ngModel)]="name"
+                name="name"
+                class="form-control form-control-lg"
+                placeholder="Ej. Barcelona FC"
+                required
+              />
+            </div>
+
+            <div class="d-grid gap-2">
+              <button
+                type="button"
+                class="btn btn-success btn-lg"
+                (click)="createTeam()"
+                [disabled]="!name || name.trim() === ''"
+              >
+                <i class="bi bi-check-circle"></i> Guardar equipo
+              </button>
+              <a routerLink="/" class="btn btn-outline-secondary">
+                Cancelar
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
