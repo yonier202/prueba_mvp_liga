@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, of, tap } from 'rxjs';
 import { Teams } from '../interfaces/team-response.interface';
+import environment from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class TeamService {
-  private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
