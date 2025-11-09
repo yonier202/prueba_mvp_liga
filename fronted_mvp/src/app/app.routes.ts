@@ -7,6 +7,10 @@ export const routes: Routes = [
     loadChildren: () => import('./Teams/teams.routes').then(m => m.routes)
   },
   {
+    path: 'games',
+    loadChildren: () => import('./Games/game.route').then(m => m.routes)
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'equipos'

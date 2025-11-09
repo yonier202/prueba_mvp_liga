@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GameStoreRequest;
 use App\Http\Requests\ReportResultRequest;
 use App\Services\GameService;
 use Exception;
@@ -35,6 +36,28 @@ class GameController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Error al obtener los partidos pendientes',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function store(GameStoreRequest $request): JsonResponse {
+        try {
+            $game = $this->service->create($request->validated());
+
+            return response()->json([
+                'success' => true,
+                'data' => $game,
+                'message' => 'Partido creado correctamente'
+            ], 201);
+        } catch (Exception $e) {
+            Log::error('Error en GameController@store: ' . $e->getMessage(), [
+                'request_data' => $request->validated()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Error al crear el partido',
                 'error' => $e->getMessage()
             ], 500);
         }
