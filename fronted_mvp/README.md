@@ -1,3 +1,22 @@
+1. installar dependencias 
+
+npm install
+
+------------------------- 
+    
+2. configurar environemts
+    
+cambiar si es necesario la API_URL en en src/environments/environment.ts
+
+------------------------ 
+
+3. ejecutar servidor local 
+
+ng serve -o
+
+------------------------- 
+
+
 # FrontedMvp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0-next.1.

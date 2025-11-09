@@ -1,3 +1,30 @@
+1. variables de entorno
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1 
+DB_PORT=3306 
+DB_DATABASE=backend_mvp 
+DB_USERNAME=root 
+DB_PASSWORD= 
+------------------------- 
+    
+2. instalara dependencias y key 
+    
+composer install 
+php artisan key:generate 
+------------------------ 
+3. correr migraciones y seeders 
+php arisan migrate --seed 
+------------------------ 
+4. ejecutar servidor local 
+php artisan serve 
+------------------------- 
+5. ejecutar pruebas unitarias 
+crear la base de datos backend_mvp_test 
+php artisan test
+
+----------------------------
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
