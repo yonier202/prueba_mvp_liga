@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { Games } from '../interfaces/game.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class GameService {
 
-  private base = 'http://127.0.0.1:8000/api';
+  private base = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
