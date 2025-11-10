@@ -22,6 +22,22 @@ class GameService
             ->where('status', 'pending')
             ->get();
     }
+    public function create(array $data)
+    {
+        try {
+            $game = Game::create([
+                'home_team_id' => $data['home_team_id'],
+                'away_team_id' => $data['away_team_id'],
+            ]);
+
+            return $game;
+        } catch (Exception $e) {
+            Log::error('Error al crear el partido: ' . $e->getMessage(), [
+                'data' => $data
+            ]);
+            throw $e;
+        }
+    }
 
     public function reportResult($gameId, array $data)
     {
@@ -50,7 +66,7 @@ class GameService
                 'game_id' => $gameId,
                 'data' => $data
             ]);
-            throw $e; 
+            throw $e;
         }
     }
 }
