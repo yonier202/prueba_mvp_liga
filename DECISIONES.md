@@ -1,7 +1,7 @@
 
 # 🧠 DECISIONES.md
 
-Aceptar el pull request que contienen las pruebas unitarias, environments separados y endpoint + vista en el front para crear partidos.
+Los pull request subidos a master contienen las pruebas unitarias, environments separados y endpoint + vista en el front para crear partidos.
 
 ## 📋 Contexto del Proyecto
 El sistema de **Mini Liga** consiste en tres componentes:
